@@ -2,11 +2,25 @@ package com.youssef.calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 
 import org.junit.jupiter.api.Test;
 
 class CalculatorTest {
-    Calculator calc = new Calculator();
+    private Calculator calc;
+
+    @BeforeEach
+    public void setUp() {
+        // Création de l’objet avant chaque test
+        calc = new Calculator();
+    }
+
+    @AfterEach
+    public void tearDown() {
+        // Nettoyage éventuel après chaque test
+        calc = null;
+    }
 
     @Test
     public void testAdd() {
